@@ -1,92 +1,94 @@
 # Test Plan: Perplexity AI
 
 ## Objective
-The objective of this testing plan is to conduct a thorough and structured evaluation of the reliability, consistency, and ethical behavior of Perplexity AI. The testing is designed to closely reflect real-world usage scenarios, where users rely on the system for accurate, timely, and trustworthy information.
+To establish a systematic testing plan for Perplexity AI's reliability, consistency and ethics through realistic scenarios that represent a user using the AI as his source of accurate and timely information.
 
-By applying a systematic approach across multiple categories of testing, this process ensures that the system is evaluated not only for its ability to generate correct responses, but also for how it behaves under pressure, ambiguity, and complex situations. The intention is to develop a well-supported understanding of both the strengths and limitations of the system, particularly in contexts where incorrect or misleading information could have significant consequences.
+To ensure a comprehensive evaluation, the methodologies of testing will be consistent in nature across several different types of tests so that they may be compared against one another. Thus, while Perplexity's ability to produce correct outputs will be tested, so shall be its ability to behave reliably during pressured (time constraints), ambiguous (unclear), and/or complex (multifaceted) situations. The methodologies must also yield a solid understanding of the strengths and limitations of Perplexity when delivering inaccurate or misleading outputs as results of action taken by it.
 
 ## Test Categories
 
 ### 1. Factual Accuracy Testing
-This category focuses on evaluating whether the information provided by Perplexity AI is factually correct, clearly supported, and appropriately sourced. Since the system integrates real-time web search and citation generation, it is important to assess not just the answer itself, but also how well it reflects and represents the underlying sources.
+This category focuses on evaluating the factual accuracy of the information provided by Perplexity AI and if it is clearly supported and adequately sourced. Since the platform uses real-time web search and citation generation, it is necessary to evaluate not only the answer given but also how closely the answer matches and accurately represents the source from which the information was obtained.
 
-The testing includes a range of queries such as controversial claims, commonly misunderstood facts, and technical or academic questions. These scenarios allow for a deeper evaluation of how accurately the system retrieves and synthesizes information.
+The testing will involve various types of queries such as controversial claims, commonly misunderstood facts, and questions that fall within the technical or academic range so that there is more extensive evaluation of how accurate the system was in retrieving and synthesizing the information.
 
-Particular attention is given to:
-- Whether the system provides correct and verifiable information  
-- How accurately it interprets and summarizes source material  
-- Whether the cited references genuinely support the claims made  
-- The clarity and relevance of the sources provided  
+Specific focus will be placed on:
+- If the system provides verifiably accurate and/or information
+- How accurately the system interpreted and summarized source material
+- Whether the cited references substantiate the claims made
+- If the sources provided are clear and relevant
 
-This approach ensures that both the content and the supporting evidence are evaluated together, rather than in isolation.
+By following these criteria, both the content and supporting evidence of the content will all be evaluated together rather than evaluated individually.
 
 ### 2. Consistency Testing
-This category evaluates how stable and dependable the system’s responses are when presented with similar or identical questions under varying conditions. Consistency is a critical factor in determining user trust, especially when the system is used repeatedly over time.
+This evaluation's primary focus is consistency of action by the system when posed comparable or identical questions under different circumstances. User confidence should be created through consistency in the way a system performs on repeated occasions.
 
 The testing process includes:
-- Repeating the same question across different sessions  
-- Rephrasing the same question using different wording  
-- Introducing slight changes in context within a conversation  
+- You can ask the same question on several different occasions.
+- You can pose the same question using varying phraseology.
+- You can change the context of the conversation slightly.
 
-The responses are carefully compared to assess whether the system maintains alignment in its conclusions, reasoning, and use of sources. Any variation in output is examined to understand whether it reflects meaningful updates in information or inconsistency in the system’s behavior.
+The responses will be compared against one another to evaluate whether the system produces consistent results across the parameters of conclusion, reasoning and use of source materials. Any deviation from a consistent output will be evaluated to determine whether they signify substantive updates to information or an inconsistency in system behavior.
 
-This ensures a clear understanding of how predictable and reliable the system is in practical usage.
+This will provide a good understanding of the level of predictability and reliability of the system's output for practical use.
 
 ### 3. Boundary Testing
-This category explores how Perplexity AI performs when operating near the limits of its capabilities. These tests are particularly important because they reflect scenarios where users may depend on the system for sensitive or high-stakes information.
+This category looks at how Perplexity AI will respond when pushed to the limits of its abilities. Such tests are critical because they represent situations where users might rely on the system for important or high-risk information.
 
-The testing includes:
-- Questions related to recent or evolving events  
-- Prompts involving medical or legal guidance  
-- Queries requiring multi-step reasoning or complex judgment  
+Testing includes:
+- Recent or constantly changing events.
+- Medical or legal questions.
+- Questions that require multiple steps of reasoning or complicated decision-making.
 
-The system’s responses are evaluated based on:
-- Its ability to recognize limitations in knowledge  
-- The level of caution exercised in sensitive situations  
-- Whether it avoids presenting uncertain information with high confidence  
-- The appropriateness and responsibility of the guidance provided  
+The evaluation of the system's responses is based on:
+- The system's ability to acknowledge limitations of knowledge.
+- The caution displayed when operating within sensitive areas.
+- Whether the system displays uncertainty at high confidence.
+- The properness and reasonableness of guidance provided.
 
-This category helps determine whether the system behaves responsibly when handling scenarios that require careful and accurate communication.
+This category thus helps determine if the system will demonstrate safe operational behavior while communicating in situations requiring careful and accurate communications.
+
+---
 
 ### 4. Edge Case Testing
-This category focuses on challenging the system with inputs that are unclear, ambiguous, or logically conflicting. These situations are valuable for understanding how the system handles uncertainty and whether it can maintain coherence when faced with difficult inputs.
+This category tests the limits of the system by introducing inputs which are either unclear and/or contain logical contradictions. It is intended to help provide insight into how the system reacts to uncertain information and if it continues to generate coherent outputs when faced with complex input.
 
-The testing includes:
-- Ambiguous or vague queries that lack clear intent  
-- Prompts containing conflicting or contradictory information  
-- Questions designed to test ethical and policy boundaries  
+The methods of testing are:
+- Providing vague or ambiguous inputs, which do not provide clear intent
+- Providing prompts that have conflicting or contradictory information
+- Asking questions that challenge the ethical and policy boundaries within the system
 
-The responses are evaluated based on:
-- How well the system identifies and addresses ambiguity  
-- Its ability to recognize and resolve contradictions  
-- Whether it maintains logical consistency in its output  
-- Its adherence to ethical and responsible response behavior  
+The evaluation criteria for responses are:
+- How well the system is able to identify and address ambiguity
+- How well the system recognizes and resolves contradiction
+- Whether the system is able to maintain logical consistency throughout its response
+- Whether the system produces ethical and responsible responses to all input
 
-This category provides insight into the system’s ability to manage complexity and uncertainty in a controlled and meaningful way.
+This category also provides insight into how well the system manages and copes with complexity and uncertainty when presented with controlled and meaningful situations.
 
 ## Documentation Plan
-All testing interactions are documented in a structured and consistent format to ensure clarity, transparency, and reproducibility. Each test case includes:
+For all the testing to be done in an organized, consistent manner that supports effective results, every interaction that occurs during a test is documented using a specific format; this allows for clarification, transparency and repeatability for all types of tests. Each test's documentation includes:
 
-- The exact prompt used  
-- The complete response generated by the system  
-- The timestamp of the interaction  
-- A classification of the outcome (accurate, inconsistent, misleading, etc.)  
-- Supporting evidence such as screenshots or saved chat logs  
+- The exact prompt which was used
+- The full response from the system was generated
+- The date and time of when the interaction occurred
+- The end result of the test (accurate, inconsistent, misleading, etc.)
+- Supporting documentation such as screenshots or copies of saved chat logs
 
-This level of documentation ensures that every observation is traceable and can be reviewed or replicated if needed. It also allows for a more precise analysis when identifying patterns across multiple tests.
+With this level of documentation, each and every test can be traced back to its source, reviewed, or repeated if needed. Each test's documentation also allows for a more accurate analysis of patterns developed from the results of multiple tests.
 
 ## Expected Outcomes
-Through this testing process, a comprehensive understanding of Perplexity AI’s performance is developed across multiple dimensions. The results are expected to highlight both the strengths and limitations of the system.
+This assessment method creates a full profile of Perplexity AI for evaluation purposes by analyzing performance relative to several areas.  Therefore, it is anticipated that analysis will provide evidence of both positive attributes of the system as well as negative attributes.
 
-On one hand, the system is expected to demonstrate strong performance in areas such as:
-- Providing quick access to relevant and up-to-date information  
-- Generating responses supported by citations  
-- Handling general knowledge and straightforward queries effectively  
+1. System will likely be able to provide fast access to appropriate and current information.
+2. Provides citations on the answers it produces.
+3. Effectively answers common knowledge or simple question types from users.
 
-At the same time, the testing is designed to reveal areas where challenges may arise, including:
-- Instances of hallucination or unsupported claims  
-- Variations in responses that indicate inconsistency  
-- Ethical boundary concerns in sensitive scenarios  
-- Misleading, weak, or incorrectly applied citations  
+The tests will also show how many areas where there was a problem with the system and/or where there will be issues due to:
 
-By capturing both successful and problematic outcomes, the analysis ensures a balanced and realistic evaluation. This approach provides a clear and well-supported perspective on how the system performs in real-world conditions, including situations where reliability is critical as well as those where it performs as expected.
+1. Examples of referring to hallucinations or making unsubstantiated claims.
+2. Examples that indicate some form of inconsistent responses.
+3. Ethics related to providing answers when ethical boundaries are unclear.
+4. Providing references that are misleading, weak, or incorrectly associated with an answer produced.
+
+Capturing both the positive outcomes and the outcomes flagged as having issues enables this examination to provide a balanced and reasonable assessment of performance.  Therefore, the information gathered here will provide significant evidence to prove or disprove the expected performance of the system.   This examination will also include an analysis of the situations where reliability is critical to obtaining the anticipated outcomes, and where the expected outcome will not occur.

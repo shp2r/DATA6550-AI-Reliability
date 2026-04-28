@@ -2,6 +2,15 @@
 This report is assisted with AI in its writing. AI tools were used only to improve clarity, structure, and language.
 
 All testing, prompt design, observations, and analysis were conducted by me. The findings and conclusions presented in this report are based on my own work and understanding.
+
+## Executive Summary
+
+This report evaluates the reliability, consistency, and ethical behavior of Perplexity AI through systematic testing across factual accuracy, consistency, boundary, and edge case scenarios. The testing was designed to simulate real-world interactions by varying prompt phrasing, intent, and complexity.
+
+The findings show that while the system demonstrates strong factual accuracy, reproducibility, and enforcement of safety boundaries, it exhibits limitations in instruction compliance, context awareness, and handling of sensitive content. In particular, the system fails to consistently follow structured instructions (such as providing sources), can be influenced by contextual framing, and struggles to balance helpfulness with safety in certain scenarios.
+
+These results highlight that although the system is reliable for general use, it is not fully suitable for high-stakes environments without additional safeguards. The report concludes with recommendations for improving instruction adherence, context-sensitive filtering, and ethical response handling to support safer real-world deployment.
+
 # Findings and Analysis
 
 ## 1. Overview of Testing
@@ -21,6 +30,12 @@ A key strength of this testing approach is that it does not rely solely on direc
 Overall, the testing methodology ensures that the evaluation captures not only correctness, but also behavioral patterns, decision-making logic, and ethical considerations. In my testing, these variations in phrasing and tone helped reveal how the system behaves under more realistic and less structured user inputs.
 
 ---
+
+## Methodology
+
+The evaluation was conducted using a structured testing approach designed to identify failure patterns and assess system reliability. Multiple prompt categories were developed, including factual accuracy, consistency, boundary testing, and edge cases. Each category included both direct and rephrased prompts to test robustness to linguistic variation.
+
+Prompts were intentionally designed to challenge the system through misleading claims, contradictory inputs, and ethically sensitive scenarios. Responses were analyzed based on accuracy, consistency, instruction compliance, and adherence to safety policies. Repeated trials were conducted for selected prompts to evaluate reproducibility, and variations in tone and phrasing were used to simulate realistic user behavior.
 
 ## 2. Failure Patterns
 
@@ -254,6 +269,14 @@ When tested with rephrased prompts, the system maintained consistent conclusions
 | Bleach claim     | Misleading and indirect prompts| Consistent denial    |
 
 Similarly, in boundary testing, the system consistently refused to generate scam or fraud-related content regardless of framing, tone, or intent, which was clearly observed in my testing. However, while refusal behavior was stable, the tone and level of detail varied across responses. Minor variations were also observed in communication style, phrasing, and detail level, which do not affect correctness but may influence user perception. This highlights a distinction between functional reproducibility (logic and reasoning) and presentation reproducibility (tone and style). Overall, the system demonstrates high reproducibility in factual accuracy, reasoning, and policy enforcement, but moderate reproducibility in communication consistency and instruction adherence, which is an important consideration for deployment in environments requiring both precision and standardized output.
+
+## Cross-System Analysis
+
+Although this evaluation focuses on Perplexity AI, many of the observed behaviors reflect broader patterns commonly identified in large language models. Issues such as inconsistent instruction compliance, sensitivity to prompt framing, and trade-offs between helpfulness and safety are not unique to a single system, but are widely documented across AI platforms.
+
+Compared to typical LLM behavior, Perplexity AI demonstrates strong factual grounding and consistency, particularly due to its integration with external data sources. However, like other systems, it remains vulnerable to context manipulation and lacks nuanced handling of complex ethical scenarios. These similarities suggest that the identified limitations are not isolated, but indicative of current challenges in AI system design and deployment.
+
+This comparison highlights the need for system-wide improvements across AI platforms, particularly in areas such as instruction fidelity, context-aware reasoning, and safe handling of sensitive information.
 
 ## 4. Ethical Implications
 
@@ -667,6 +690,14 @@ This limitation arises from the need for:
 - enhanced control over sensitive information disclosure  
 
 ---
+
+## Recommendations
+
+Based on the findings of this evaluation, several improvements can enhance the reliability and safety of AI systems like Perplexity AI. First, instruction compliance should be strengthened to ensure that all components of user requests, such as citation requirements, are consistently followed. Second, context-aware filtering should be improved to evaluate not only user intent but also the potential misuse of generated outputs.
+
+Additionally, the system should support defensive and educational use cases by providing high-level, non-actionable explanations rather than complete refusal. Tone standardization is also recommended to maintain consistent professionalism across different interaction styles. Finally, implementing safeguards to limit the exposure of sensitive content, even in protective contexts, would reduce unintended risks.
+
+These improvements would help balance helpfulness with safety while increasing the system’s suitability for real-world and high-stakes applications.
 
 ### Final Evaluation and Insight
 

@@ -6,7 +6,8 @@ This repository contains a structured evaluation of multiple AI systems, focusin
 
 - Tirth Nitinkumar Laheri— Evaluation of Perplexity AI  
 - Seth Phillips — Evaluation of Claude  
-- Sudarshan Reddy — Evaluation of ChatGPT  
+- Sudarshan Reddy — Evaluation of ChatGPT
+- Sushmitha Sana  — Evaluation of Google Gemini 
 
 ## Project Overview
 

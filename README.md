@@ -4,7 +4,7 @@ This repository contains a structured evaluation of multiple AI systems, focusin
 
 ## Team Members
 
-- Tirth — Evaluation of Perplexity AI  
+- Tirth Nitinkumar Laheri— Evaluation of Perplexity AI  
 - Seth Phillips — Evaluation of Claude  
 - Sudarshan Reddy — Evaluation of ChatGPT  
 

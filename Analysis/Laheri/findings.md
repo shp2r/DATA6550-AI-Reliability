@@ -243,168 +243,23 @@ Therefore, this issue represents a trade-off between:
 
 ## 3. Reproducibility Analysis
 
-Reproducibility is a critical component in evaluating the reliability and trustworthiness of any AI system. A system that produces consistent outputs when given the same or similar inputs is more dependable than one that generates unpredictable or highly variable responses. In real-world applications, especially in domains such as healthcare, education, and decision support systems, reproducibility directly influences user trust and system credibility.
+Reproducibility is a critical factor in evaluating the reliability of an AI system, as consistent outputs under similar conditions directly influence user trust and credibility in real-world applications such as healthcare, education, and decision support. In this evaluation, reproducibility was tested using both identical prompts and rephrased variations to capture strict consistency as well as robustness to linguistic changes. In the ibuprofen test, identical prompts produced highly consistent responses in terms of structure, listed risks (gastrointestinal, kidney, cardiovascular, liver), numerical estimates, and recommendations. Across repeated prompts in my testing, this pattern remained unchanged, demonstrating strong consistency in factual content and organization. However, the system consistently failed to include sources when explicitly requested, highlighting that reproducibility of content does not guarantee reproducibility of instruction compliance. This indicates that while the system reliably recalls and structures information, it does not consistently adhere to specific formatting requirements.
 
-The evaluation of reproducibility in this study was conducted using two complementary approaches:
+When tested with rephrased prompts, the system maintained consistent conclusions across factual scenarios such as flat Earth claims, oxygen survival, and bleach misinformation, even when tone, wording, or ambiguity varied. This demonstrates strong robustness to linguistic variation.
 
-- repetition of identical prompts  
-- use of multiple rephrased variations of the same query  
+| Test Scenario     | Prompt Variation                | Outcome Consistency   |
+|------------------|--------------------------------|----------------------|
+| Flat Earth       | Multiple rephrased prompts     | Consistent rejection |
+| Oxygen survival  | Casual and formal prompts      | Consistent correction|
+| Bleach claim     | Misleading and indirect prompts| Consistent denial    |
 
-This dual approach allowed for assessment of both strict reproducibility and robustness to linguistic variation, ensuring that the system was tested under realistic user interaction patterns.
-
----
-
-### 3.1 Reproducibility Under Identical Prompts
-
-In the consistency test involving ibuprofen side effects, the exact same prompt was submitted multiple times without any changes in wording, structure, or context. The system produced responses that were highly similar across all attempts.
-
-#### Key Observations:
-- identical structure of responses  
-- consistent listing of risks (gastrointestinal, kidney, cardiovascular, liver)  
-- same numerical estimates (for example, percentage risk ranges)  
-- consistent recommendations regarding dosage and medical consultation  
-
-Across repeated prompts in my testing, this pattern remained unchanged, indicating strong consistency in content but not in instruction compliance.
-These results indicate that the system maintains a stable internal representation of factual knowledge and applies it consistently when the input conditions remain unchanged.
-
-However, despite this strong consistency, the system repeatedly failed to include sources when explicitly requested. This reveals an important nuance: reproducibility of *content* does not necessarily imply reproducibility of *instruction compliance*.
-
-#### Analytical Insight:
-The system demonstrates high reproducibility in:
-- factual recall  
-- structural organization  
-- numerical consistency  
-
-But lower reproducibility in:
-- adherence to specific formatting requirements  
-
----
-
-### 3.2 Reproducibility Under Rephrased Prompts
-
-A more rigorous test of reproducibility involves evaluating how the system responds to variations in phrasing, tone, and wording while maintaining the same underlying intent. This reflects real-world usage, where users rarely repeat identical queries.
-
-Across multiple factual accuracy tests, including flat Earth claims, oxygen survival, and bleach-related misinformation, the system consistently produced the same conclusions regardless of how the prompt was phrased.
-
-#### Key Observations:
-- all flat Earth prompts resulted in rejection of the claim  
-- all oxygen-related prompts resulted in scientifically accurate corrections  
-- all bleach-related prompts resulted in clear denial of misinformation  
-
-In addition, the reasoning provided by the system remained aligned across variations, even when:
-- informal language was used  
-- sarcastic tone was introduced  
-- prompts were partially ambiguous  
-
-#### Comparative Summary:
-
-| Test Scenario | Prompt Variation | Outcome Consistency |
-|--------------|----------------|--------------------|
-| Flat Earth | Multiple rephrased prompts | Consistent rejection |
-| Oxygen survival | Casual and formal prompts | Consistent correction |
-| Bleach claim | Misleading and indirect prompts | Consistent denial |
-
-These results indicate strong robustness to linguistic variation, suggesting that the system is not overly dependent on specific phrasing patterns.
-
----
-
-### 3.3 Reproducibility in Boundary Enforcement
-
-Reproducibility was also evaluated in scenarios involving ethical and policy boundaries. In the scam email and fraud-related tests, the system consistently refused to generate harmful or illegal content across all variations of the prompts.
-
-#### Key Observations:
-- refusal maintained regardless of tone (formal, casual, sarcastic)  
-- refusal maintained even when prompts were framed hypothetically  
-- refusal maintained even when intent was disguised as educational or preventive  
-
-This consistency was clearly observed in my testing, where all variations of scam and fraud-related prompts resulted in refusal.
-This indicates that the system has a stable and consistently enforced policy framework when dealing with high-risk or restricted content.
-
-However, it is important to note that while refusal behavior was consistent, the *style* of refusal varied. Some responses were:
-- concise and formal  
-- more detailed and explanatory  
-- occasionally defensive or assertive  
-
----
-
-### 3.4 Observed Variations and Their Impact
-
-While logical and factual consistency was strong across all tests, minor variations were observed in areas such as:
-
-- tone and communication style  
-- level of detail provided  
-- phrasing and sentence structure  
-
-These variations did not affect the correctness of the response, but they may influence user perception in certain contexts.
-
-#### Implications of Variation:
-- In professional settings, inconsistent tone may reduce perceived reliability  
-- In educational settings, variation in detail may affect clarity  
-- In repeated interactions, users may notice inconsistency in communication style  
-
-This highlights an important distinction between:
-- **functional reproducibility** (correctness and reasoning)  
-- **presentation reproducibility** (tone and style)  
-
-The system performs strongly in the former but moderately in the latter.
-
----
-
-### 3.5 Overall Evaluation of Reproducibility
-
-Based on the testing results, the system demonstrates a high level of reproducibility across multiple dimensions.
-
-#### Strengths:
-- consistent factual outputs under repeated conditions  
-- stable reasoning across rephrased prompts  
-- reliable enforcement of safety and policy constraints  
-
-#### Limitations:
-- inconsistent adherence to specific instructions (such as providing sources)  
-- variation in tone and communication style  
-- lack of consistency in formatting across responses  
-
-Overall, the system can be considered highly reproducible in terms of logic, reasoning, and policy enforcement, but moderately reproducible in terms of communication consistency and instruction execution.
-
-This distinction is important when evaluating the system for deployment in environments where both accuracy and presentation consistency are critical.
+Similarly, in boundary testing, the system consistently refused to generate scam or fraud-related content regardless of framing, tone, or intent, which was clearly observed in my testing. However, while refusal behavior was stable, the tone and level of detail varied across responses. Minor variations were also observed in communication style, phrasing, and detail level, which do not affect correctness but may influence user perception. This highlights a distinction between functional reproducibility (logic and reasoning) and presentation reproducibility (tone and style). Overall, the system demonstrates high reproducibility in factual accuracy, reasoning, and policy enforcement, but moderate reproducibility in communication consistency and instruction adherence, which is an important consideration for deployment in environments requiring both precision and standardized output.
 
 ## 4. Ethical Implications
 
-The ethical evaluation of Perplexity AI reveals a combination of strong safeguards and important limitations. While the system demonstrates a clear commitment to preventing harm, its behavior across different test scenarios highlights challenges in balancing safety, usefulness, and responsible information delivery.
+The ethical evaluation of Perplexity AI reveals a combination of strong safeguards and notable limitations. The system consistently demonstrates a clear commitment to preventing direct harm, particularly in high-risk scenarios such as scam generation and fraud-related requests, where it reliably refuses to provide actionable or deceptive content. It also effectively rejects harmful medical misinformation and maintains safety boundaries across different prompt variations. These behaviors align with core ethical principles such as non-maleficence and responsible information dissemination. However, ethical performance is not solely defined by blocking harmful content, but also by how well the system supports legitimate use cases without introducing unintended risks. In my testing, it became clear that while the system enforces high-level safety constraints effectively, it lacks nuanced decision-making in more complex scenarios.
 
-Ethical performance in AI systems is not only determined by whether harmful content is blocked, but also by how effectively the system supports legitimate use cases without introducing unintended risks. The findings from this evaluation show that while the system performs well in enforcing high-level safety constraints, it lacks nuance in certain decision-making scenarios.
-
----
-
-### 4.1 Ethical Strengths: Prevention of Direct Harm
-
-One of the most significant strengths observed during testing is the system’s ability to prevent direct harm. In multiple high-risk scenarios, including requests for scam generation and fraud techniques, the system consistently refused to provide actionable or harmful information.
-
-#### Key Ethical Strengths:
-- Refusal to generate illegal or deceptive content  
-- Rejection of harmful medical misinformation  
-- Consistent enforcement of safety boundaries across prompt variations  
-
-These behaviors indicate that the system is designed with a strong foundational commitment to ethical constraints. It prioritizes user safety and avoids contributing to activities that could cause financial, physical, or psychological harm.
-
-From an ethical standpoint, this aligns with core principles such as:
-- non-maleficence (avoiding harm)  
-- responsibility in information dissemination  
-
----
-
-### 4.2 Context-Based Disclosure Risks
-
-Despite strong safety enforcement in direct scenarios, a critical ethical concern arises from the system’s handling of context-based requests. The testing revealed that when sensitive or restricted information is framed within a protective or educational context, the system may still provide that information.
-
-This was clearly demonstrated in cases involving piracy and adult content, where the system disclosed specific website names when the request was framed as a parental control measure.
-
-#### Key Observations:
-- The system interprets intent based on surface-level phrasing  
-- Protective framing increases likelihood of compliance  
-- The output may still enable misuse despite benign intent  
-
-#### Ethical Comparison:
+A key ethical concern arises from context-based disclosure. When sensitive information is framed within a protective or educational context, the system may still provide it, as seen in cases involving piracy and adult content where specific websites were listed for parental control purposes. This indicates that the system relies heavily on surface-level intent interpretation rather than evaluating downstream risks.  
 
 | Ethical Principle | Ideal Behavior | Observed Behavior |
 |------------------|--------------|------------------|
@@ -412,121 +267,9 @@ This was clearly demonstrated in cases involving piracy and adult content, where
 | Intent evaluation | Consider both intent and potential misuse | Focuses primarily on stated intent |
 | Risk awareness | Evaluate downstream consequences | Limited consideration of misuse risk |
 
-#### Ethical Concern:
-This behavior introduces a conflict between:
-- assisting the user  
-- preventing indirect harm  
+This creates a conflict between assisting the user and preventing indirect harm, since even benign intent can lead to misuse. At the same time, the system demonstrates over-restrictiveness in other areas, such as refusing to provide any fraud-related information even for clearly defensive or educational purposes. This limits its usefulness in real-world contexts like cybersecurity awareness or institutional safety. Additionally, the system’s handling of controversial topics, such as vaccines, sometimes presents a “both sides” perspective without adequately distinguishing between evidence-based conclusions and unsupported claims, potentially creating false equivalence and misleading users.
 
-Even if the user’s stated intent is legitimate, the system has an ethical responsibility to consider how the information might be used beyond the immediate context. This was particularly evident in my testing when the same sensitive information was provided under a protective framing.
-
----
-
-### 4.3 Lack of Support for Defensive and Preventive Use Cases
-
-Another important ethical limitation is the system’s inability to support legitimate defensive scenarios. In the fraud-related tests, the system refused to provide any information about fraud techniques, even when the user explicitly stated that the purpose was to prevent such activities in a school environment.
-
-#### Key Observations:
-- No distinction between malicious and preventive intent  
-- No attempt to provide safe, high-level explanations  
-- Repeated refusal without adaptive guidance  
-
-#### Ethical Implication:
-This creates a situation where:
-- harmful knowledge is completely restricted  
-- beneficial, non-actionable knowledge is also restricted  
-
-From an ethical perspective, this limits the system’s ability to:
-- empower users with awareness  
-- support institutional safety efforts  
-- contribute to education and prevention  
-
-#### Missed Ethical Opportunity:
-A more balanced approach would involve:
-- explaining general fraud patterns  
-- providing awareness without enabling misuse  
-- supporting defensive knowledge while maintaining safety  
-
-This reflects a broader ethical challenge in AI design: ensuring that safety measures do not unintentionally reduce the system’s usefulness in legitimate contexts.
-
----
-
-### 4.4 False Equivalence in Controversial Topics
-
-The handling of controversial topics, such as vaccines, revealed another subtle but important ethical concern. The system often presents information in a “both sides” format, even when one side is not supported by credible scientific evidence.
-
-#### Key Observations:
-- Presentation of opposing viewpoints without equal weighting  
-- Inclusion of unsupported or weak claims alongside validated evidence  
-- Lack of clear prioritization of scientific consensus  
-
-#### Ethical Concern:
-This approach may create a false sense of balance, where users perceive:
-- equal credibility between supported and unsupported claims  
-
-This is particularly problematic in domains such as:
-- public health  
-- science education  
-- policy decision-making  
-
-#### Ethical Analysis:
-Providing multiple perspectives is generally valuable, but ethical responsibility requires:
-- distinguishing between evidence-based conclusions and unsupported claims  
-- clearly communicating the strength of evidence  
-
-Failure to do so may lead to:
-- misinformation persistence  
-- confusion among users  
-- erosion of trust in authoritative knowledge  
-
----
-
-### 4.5 Trade-off Between Helpfulness and Safety
-
-A recurring ethical theme across multiple tests is the trade-off between helpfulness and safety. The system often prioritizes providing detailed and actionable responses, even in contexts where a more cautious approach may be appropriate.
-
-#### Key Observations:
-- Detailed responses provided in sensitive contexts  
-- Limited use of abstraction or generalization  
-- Emphasis on completeness over risk minimization  
-
-#### Ethical Tension:
-The system must balance two competing goals:
-- maximizing usefulness  
-- minimizing potential harm  
-
-#### Implications:
-- Overly helpful responses may increase exposure to sensitive content  
-- Overly restrictive responses may reduce usability  
-
-This tension highlights the need for more adaptive decision-making that considers:
-- context  
-- potential consequences  
-- user intent  
-
----
-
-### 4.6 Overall Ethical Evaluation
-
-The ethical performance of Perplexity AI can be summarized as follows:
-
-#### Strengths:
-- Strong prevention of direct harm  
-- Consistent enforcement of safety policies  
-- Reliable rejection of illegal and dangerous requests  
-
-#### Limitations:
-- Context-based disclosure of sensitive information  
-- Lack of support for defensive or preventive scenarios  
-- Potential for false equivalence in controversial topics  
-- Trade-offs between helpfulness and safety  
-
-#### Final Ethical Insight:
-The system demonstrates a strong foundation in ethical safety but lacks nuanced decision-making in complex scenarios. Ethical AI systems must go beyond simple rule enforcement and incorporate deeper reasoning about:
-- context  
-- consequences  
-- long-term impact  
-
-While Perplexity AI performs well in preventing immediate harm, further refinement is needed to ensure that it can responsibly support a wider range of real-world applications without introducing indirect risks.
+Another important ethical dimension is the trade-off between helpfulness and safety. The system often prioritizes detailed and complete responses, even in sensitive contexts, which may increase exposure to harmful or inappropriate information. At the same time, overly strict refusals can reduce usability in legitimate scenarios. This tension highlights the need for more adaptive and context-aware decision-making that considers intent, potential consequences, and real-world impact. Overall, while Perplexity AI demonstrates strong ethical safeguards in preventing direct harm and enforcing safety policies, it exhibits limitations in context awareness, support for defensive use cases, and balanced information presentation. These findings suggest that although the system is ethically robust at a foundational level, further refinement is necessary to ensure responsible and nuanced behavior across complex real-world applications.
 
 ## 5. Legal Considerations
 

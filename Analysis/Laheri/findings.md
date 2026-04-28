@@ -1,3 +1,7 @@
+### Note:
+This report is AI-assisted in its writing. AI tools were used only to improve clarity, structure, and language.
+
+All testing, prompt design, observations, and analysis were conducted by me. The findings and conclusions presented in this report are based on my own work and understanding.
 # Findings and Analysis
 
 ## 1. Overview of Testing
